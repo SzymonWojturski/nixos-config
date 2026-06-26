@@ -1,0 +1,83 @@
+@import url("/home/szywoj/.cache/hellwal/colors.css");
+
+* {
+  min-height: 0;
+  min-width: 0;
+  font-family: Lexend, "JetBrainsMono NFP";
+  font-size: 16px;
+  font-weight: 600;
+}
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0);
+}
+#workspaces * {
+  font-size: 12px;
+  font-weight: 900;
+}
+#workspaces button {
+  border-bottom: 2px solid transparent;
+}
+#workspaces button:hover {
+  border-bottom: 2px solid transparent;
+  box-shadow: none; /* Remove predefined box-shadow */
+  text-shadow: none; /* Remove predefined text-shadow */
+  background: none; /* Remove predefined background color (white) */
+  transition: none; /* Disable predefined animations */
+}
+
+#workspaces button,
+#workspaces button:hover,
+#workspaces button:active {
+  border: none;
+  border-bottom: 2px solid transparent;
+  box-shadow: none;
+  text-shadow: none;
+  background: none;
+  outline: none;
+}
+#workspaces button.active {
+  border-bottom: 2px solid @color0;
+  border-radius: 0px;
+}
+
+#workspaces,
+#clock,
+#hardware.horizontal,
+#custom-updates,
+#battery,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd,
+#custom-power,
+#custom-next,
+#custom-pause,
+#custom-previous,
+#custom-loop,
+#custom-shuffle
+{
+    background-color:@color13;
+    border: 2px solid @color0;
+    color: @color0;
+    border-radius: 9px;
+    padding: 0px 4px;
+    margin: 0px;
+}
+#custom-next,
+#custom-previous,
+#custom-loop,
+#custom-shuffle
+{
+    font-size: 20px;
+    min-width: 36px;
+    padding: 0;
+}

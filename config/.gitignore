@@ -1,0 +1,11 @@
+# Ignore everything at the top level, then whitelist tracked configs
+/*
+
+!/.gitignore
+!/waybar/
+!/kitty/
+!/waypaper/
+!/hellwal/
+!/fastfetch/
+!/hypr/
+!/nvim/
