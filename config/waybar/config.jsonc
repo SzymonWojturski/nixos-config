@@ -7,7 +7,7 @@
     "spacing": 1, // Gaps between modules (4px)
      //Choose the order of the modules
     "modules-left": [
-        "niri/workspaces",
+        "hyprland/workspaces",
         //"custom/shuffle",
         "custom/previous",
         "custom/next",
@@ -29,13 +29,17 @@
         "custom/power"
     ],
     // Moddules configuration
-   "niri/workspaces": {
-       "format": "{index}",
-       "format-icons": {
-           "active": "..",
-           "default": ""
-       }
-   },
+    "hyprland/workspaces": {
+         "disable-scroll": true,
+    //     "all-outputs": true,
+         "warp-on-scroll": false,
+         "format": "{name}",
+         "format-icons": {
+             "urgent": "",
+             "active": "..",
+             "default": ""
+         }
+     },
 
     "clock": {
         // "timezone": "America/New_York",

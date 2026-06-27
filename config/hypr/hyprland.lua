@@ -33,7 +33,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal    = "kitty"
 local fileManager = "dolphin"
-local menu        = "wofi --show drun"
+local menu        = "fuzzel"
 
 
 -------------------
@@ -84,7 +84,7 @@ hl.env("HYPRCURSOR_SIZE",  "19")
 -----------------------
 
 -- Colors come from a hellwal Lua template.
--- Make hellwal output ~/.config/hypr/colors-hyprland.lua returning a table, e.g:
+-- Make hellwal output ~/.config/hypr/colors.lua returning a table, e.g:
 --   return {
 --     color0  = "rgb(09090a)",
 --     color2  = "rgb(4d4e3a)",
@@ -93,7 +93,16 @@ hl.env("HYPRCURSOR_SIZE",  "19")
 --     color13 = "rgb(8eaf71)",
 --     -- ... color0..color15
 --   }
-local colors = require("colors-hyprland")
+-- Ladowanie kolorow z hellwala (cache)
+local ok, colors = pcall(dofile, os.getenv("HOME") .. "/.cache/hellwal/colors.lua")
+if not ok or type(colors) ~= "table" then
+    colors = {
+        color13 = "rgb(7fc8ff)",
+        color6  = "rgb(33ccff)",
+        color2  = "rgb(505050)",
+        color10 = "rgb(303030)",
+    }
+end
 
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
@@ -305,7 +314,7 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 -- hyprshot
 hl.bind("F10", hl.dsp.exec_cmd("hyprshot -m region --clipboard-only -z"))
 
-hl.bind("KEY_CALC", hl.dsp.exec_cmd("tuxpaint"))
+-- hl.bind("KEY_CALC", hl.dsp.exec_cmd("tuxpaint"))
 
 
 --------------------------------
