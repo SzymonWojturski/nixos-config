@@ -2,6 +2,8 @@
 {
   imports = [
     ./hardware-configuration.nix
+    # nvidia.nix NIE jest tu importowany — wpina go flake.nix
+    # tylko dla hosta "nixos" (z NVIDIĄ). Host "nixos-nonvidia" go pomija.
     #inputs.home-manager.nixosModules.default
   ];
   fonts.packages = with pkgs; [

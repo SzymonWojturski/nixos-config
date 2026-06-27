@@ -10,15 +10,24 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
-    # use "nixos", or your hostname as the name of the configuration
-    # it's a better practice than "default" shown in the video
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./configuration.nix
-        inputs.home-manager.nixosModules.default
-      ];
+  outputs = { self, nixpkgs, ... }@inputs:
+  let
+    # wspólne moduły dla każdego hosta
+    base = [
+      ./configuration.nix
+      inputs.home-manager.nixosModules.default
+    ];
+    mkHost = extraModules: nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs; };
+      modules = base ++ extraModules;
+    };
+  in {
+    nixosConfigurations = {
+      # host z kartą NVIDIA
+      nixos = mkHost [ ./nvidia.nix ];
+
+      # ten sam config, ale bez sterownika NVIDIA
+      nixos-nonvidia = mkHost [ ];
     };
   };
 }
