@@ -7,6 +7,7 @@
   home.file = {
     "bin".source = ./personal-binaries;
 
+    ".config/hypr".source = ./config/hypr;
     ".config/kitty".source = ./config/kitty;
     ".config/niri".source = ./config/niri;
     ".config/nvim".source = ./config/nvim;

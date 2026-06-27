@@ -1,18 +1,16 @@
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
-workspaces {
-    workspace "1"
-    workspace "2"
-    workspace "3"
-    workspace "4"
-    workspace "5"
-    workspace "6"
-    workspace "7"
-    workspace "8"
-    workspace "9"
-    workspace "10"
-}
+workspace "1"
+workspace "2"
+workspace "3"
+workspace "4"
+workspace "5"
+workspace "6"
+workspace "7"
+workspace "8"
+workspace "9"
+workspace "10"
 
 input {
     keyboard {
@@ -28,7 +26,6 @@ input {
     }
     focus-follows-mouse max-scroll-amount="0%"
 }
-
 layout {
     gaps 4
     center-focused-column "never"
@@ -50,13 +47,10 @@ layout {
     struts {
     }
 }
-
 animations {
 }
-
 hotkey-overlay {
 }
-
 include "autostart.kdl"
 include "windowrules.kdl"
 include "keybinds.kdl"
